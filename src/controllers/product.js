@@ -1,7 +1,7 @@
 const { success, badRequestCode, notFoundCode, unAuthorizeCode, conflictCode, internalServerCode }   = require('../statuscode');
 const { product, user, category, productCategory } = require('../../models');
 const Joi   = require('joi');
-
+const cloudinary = require('../utils/cloudinary');
 
 let successCode;
 let statusData;
@@ -11,7 +11,13 @@ exports.addProduct = async (req, res) => {
     try {
         let data = req.body;
         let products;
-        const image = req.file.filename;
+        
+        const result = await cloudinary.uploader.upload(req.file.path, {
+            folder: 'dumbmerch-b34',
+            use_filename: true,
+            unique_filename: false,
+        });
+        let image = result.public_id;
         data    = {
             ...data,
             image
