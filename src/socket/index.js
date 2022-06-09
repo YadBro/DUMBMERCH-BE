@@ -105,7 +105,7 @@ const socketIo  = (io) => {
                 customerContacts = JSON.parse(JSON.stringify(customerContacts));
                 customerContacts = customerContacts.map(item => ({
                     ...item,
-                    image   : item.profile?.image === 'my-image' ? 'https://th.bing.com/th/id/OIP.DqNnP_C9pVGwHzH8-2iB1gAAAA?pid=ImgDet&rs=1' : process.env.PATH_FILE + item.profile?.image
+                    image   : item.profile?.image === 'my-image' ? 'https://th.bing.com/th/id/OIP.DqNnP_C9pVGwHzH8-2iB1gAAAA?pid=ImgDet&rs=1' : item.profile?.image
                 }));
 
                 socket.emit("customer contacts", customerContacts);
