@@ -217,12 +217,12 @@ exports.updateProduct  = async (req, res) => {
         // VALIDATING
         const id    = req.params.id;
         let data    = req.body;
-        const result = await cloudinary.uploader.upload(req.file.path, {
+        const result = await cloudinary.uploader.upload(req?.file?.path, {
             folder: 'dumbmerch-b34',
             use_filename: true,
             unique_filename: false,
         });
-        const image = result.secure_url;
+        const image = result?.secure_url;
         data    = {
             id,
             image,
