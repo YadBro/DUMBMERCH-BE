@@ -43,7 +43,7 @@ router.delete('/categories/:id', deleteCategory);
 // TRANSACTIONS
 // router.get('/transactions',getTransactions);
 router.get('/transactions/:idBuyer', detailTransaction);
-router.post('/transactions', auth, addTransaction);
+router.post('/transactions', addTransaction);
 
 router.post("/notification", notification);
 router.get('/check-auth', auth, checkAuth);
