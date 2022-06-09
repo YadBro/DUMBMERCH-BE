@@ -17,7 +17,7 @@ exports.addProduct = async (req, res) => {
             use_filename: true,
             unique_filename: false,
         });
-        let image = result.public_id;
+        let image = result.secure_url;
         data    = {
             ...data,
             image
@@ -222,7 +222,7 @@ exports.updateProduct  = async (req, res) => {
             use_filename: true,
             unique_filename: false,
         });
-        const image = result.public_id;
+        const image = result.secure_url;
         data    = {
             id,
             image,
