@@ -8,7 +8,7 @@ const { Server } = require('socket.io');
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: 'https://dumbmerch-be-yadi.herokuapp.com/' //define client origin if both client and server have different origin
+        origin: 'https://dumbmerch-by-yadi.netlify.app/' //define client origin if both client and server have different origin
     }
 });
 require('./src/socket')(io);
@@ -25,7 +25,7 @@ app.use('/assets', express.static('assets'));
 // Create endpoint grouping routes
 app.use('/api/v1/', router);
 
-app.get('/', function (req, res){
+app.get('/', function (req, res) {
     res.send({
         message: 'Hello World'
     });
