@@ -172,7 +172,7 @@ exports.notification = async (req, res) => {
         res.status(500);
     }
 };
-const updateTransaction = async (status, transactionId) => {
+const handleTransaction = async (status, transactionId) => {
     await transaction.update(
         {
         status,
