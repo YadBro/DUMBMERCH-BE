@@ -61,7 +61,7 @@ exports.register = async (req, res) =>{
 
                 statusData  = success.statusData;
                 successCode = success.statusCode;
-                message     = success.message;
+                message     = "Success to register, please Login!";
                 addUser   = await user.create(validData);
             }
 

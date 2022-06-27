@@ -72,6 +72,5 @@ exports.uploadFile = (imageFile) => {
             return next();
         }
     });
-    console.log()
     }
 };

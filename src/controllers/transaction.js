@@ -2,7 +2,6 @@ const { success, badRequestCode, internalServerCode }   = require('../statuscode
 const { user, product, transaction, profile } = require('../../models');
 const Joi   = require('joi');
 const midtransClient    = require('midtrans-client');
-const nodemailer        = require("nodemailer");
 
 let successCode;
 let statusData;
