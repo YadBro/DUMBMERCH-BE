@@ -6,16 +6,16 @@ const cors = require('cors');
 const http = require('http');
 const { Server } = require('socket.io');
 const server = http.createServer(app);
+app.use(cors());
 const io = new Server(server, {
     cors: {
-        origin: 'https://dumbmerch-by-yadi.netlify.app/' || 'http://localhost:3000' //define client origin if both client and server have different origin
+        origin: process.env.CLIENT_URL || 'http://localhost:3000' //define client origin if both client and server have different origin
     }
 });
 require('./src/socket')(io);
 
 
 // cors
-app.use(cors());
 
 // izinkan sebuah input data jadi json
 app.use(express.json());
